@@ -17,4 +17,88 @@ app.get('/recettes', async (req, res) => {
   }
 });
 
+app.post('/recettes', async (req, res) => {
+  try {
+    const {
+      titre,
+      categorie,
+      ingredient0,
+      ingredient1,
+      ingredient2,
+      ingredient3,
+      ingredient4,
+      ingredient5,
+      ingredient6,
+      ingredient7,
+      ingredient8,
+      ingredient9,
+      ingredient10,
+      ingredient11,
+      ingredient12,
+      ingredient13,
+      ingredient14,
+      etape0,
+      etape1,
+      etape2,
+      etape3,
+      etape4,
+      etape5,
+      etape6,
+      etape7,
+      etape8,
+      etape9,
+      etape10,
+      etape11,
+      etape12,
+      etape13,
+      etape14,
+      imagerecette,
+    } = req.body;
+    const [recettes] = await db
+      .promise()
+      .query(
+        'INSERT INTO recettes (titre, categorie, ingredient0, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, ingredient6, ingredient7, ingredient8, ingredient9, ingredient10, ingredient11, ingredient12, ingredient13, ingredient14, etape0, etape1, etape2, etape3, etape4, etape5, etape6, etape7, etape8, etape9, etape10, etape11, etape12, etape13, etape14, imagerecette) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+        [
+          titre,
+          categorie,
+          ingredient0,
+          ingredient1,
+          ingredient2,
+          ingredient3,
+          ingredient4,
+          ingredient5,
+          ingredient6,
+          ingredient7,
+          ingredient8,
+          ingredient9,
+          ingredient10,
+          ingredient11,
+          ingredient12,
+          ingredient13,
+          ingredient14,
+          etape0,
+          etape1,
+          etape2,
+          etape3,
+          etape4,
+          etape5,
+          etape6,
+          etape7,
+          etape8,
+          etape9,
+          etape10,
+          etape11,
+          etape12,
+          etape13,
+          etape14,
+          imagerecette,
+        ]
+      );
+    res.status(200).send(recettes);
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
+});
+
 module.exports.app = app;
