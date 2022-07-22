@@ -10,15 +10,6 @@
     "format": "prettier --write .",
     "prepare": "husky install"
   },
-  "jest": {
-    "testEnvironment": "node",
-    "setupFilesAfterEnv": [
-      "<rootDir>/tests/setupTests.js"
-    ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules/"
-    ]
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {
