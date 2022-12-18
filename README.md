@@ -5,7 +5,9 @@ Install dependencies :
 ```sh
 npm i
 ```
-Copy the environment variables : 
+
+Copy the environment variables :
+
 ```
 cp .env.example .env
 ```
@@ -17,7 +19,7 @@ If you ever want to add an environment variable, please add them to `src/environ
 
 ## Develop
 
-This will start the server and reload it when one source file changes : 
+This will start the server and reload it when one source file changes :
 
 ```sh
 npm run dev
