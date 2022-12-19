@@ -2,16 +2,16 @@
   "version": 2,
   "builds": [
     {
-      "src": "/api/index.js",
+      "src": "/src/index.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       // Specify which paths will route to a destination using a regex
-      "src": "/api/(.*)",
+      "src": "/src/(.*)",
       // Specify the paths' destination
-      "dest": "/api/index.js"
+      "dest": "/src/index.js"
     }
   ]
 }

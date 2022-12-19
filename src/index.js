@@ -103,4 +103,4 @@ app.post('/recettes', async (req, res) => {
   }
 });
 
-module.exports.app = app;
+module.exports = app;
