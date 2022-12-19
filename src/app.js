@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
   res.send('Hello');
 });
 
-app.get('/test', cors(), async (req, res) => {
+app.get('/test', async (req, res) => {
   try {
     res.send('test');
   } catch (err) {
