@@ -9,6 +9,15 @@ app.get('/', (req, res) => {
   res.send('Hello');
 });
 
+app.get('/test', cors(), async (req, res) => {
+  try {
+    res.send('test');
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('something wrong happened');
+  }
+});
+
 app.get('/recettes', cors(), async (req, res) => {
   try {
     const [recettes] = await db.promise().query('SELECT * FROM recettes');
