@@ -3,7 +3,11 @@ const cors = require('cors');
 const db = require('./db');
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: 'https://jecuisine.vercel.app/',
+  })
+);
 
 app.get('/', (req, res) => {
   res.send('Hello');
