@@ -19,12 +19,11 @@ app.get('/recettes', cors(), async (req, res) => {
   }
 });
 
-app.delete('/recettes/:titre', (req, res) => {
+app.delete('/recettes/:titre', cors(), async (req, res) => {
   try {
     const titre = req.params;
-    console.log(titre);
-    db.query('DELETE FROM recettes WHERE titre = ?', [titre]);
-    res.status(200).send('deleted');
+    const result = db.query('DELETE FROM recettes WHERE titre = ?', [titre]);
+    if (result) res.status(200).send('deleted');
   } catch (error) {
     res.status(500).send('something wrong happened');
   }
