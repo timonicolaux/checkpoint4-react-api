@@ -22,7 +22,9 @@ app.get('/recettes', cors(), async (req, res) => {
 app.delete('/recettes/:titre', cors(), async (req, res) => {
   try {
     const titre = req.params;
-    const result = db.query('DELETE FROM recettes WHERE titre = ?', [titre]);
+    const result = await db
+      .promise()
+      .query('DELETE FROM recettes WHERE titre = ?', [titre]);
     if (result) res.status(200).send('deleted');
   } catch (error) {
     res.status(500).send('something wrong happened');
