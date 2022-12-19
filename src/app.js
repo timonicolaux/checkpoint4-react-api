@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 app.use(cors({ origin: '*', credentials: true }));
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   res.send('Hello');
 });
 
