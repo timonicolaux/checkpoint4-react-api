@@ -6,6 +6,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: '*',
+    methods: ['GET', 'POST'],
   })
 );
 
@@ -13,7 +14,7 @@ app.get('/', (req, res) => {
   res.send('Hello');
 });
 
-app.get('/recettes', async (req, res) => {
+app.get('/recettes', cors(), async (req, res) => {
   try {
     const [recettes] = await db.promise().query('SELECT * FROM recettes');
     res.send(recettes);
@@ -23,7 +24,7 @@ app.get('/recettes', async (req, res) => {
   }
 });
 
-app.post('/recettes', async (req, res) => {
+app.post('/recettes', cors(), async (req, res) => {
   try {
     const {
       titre,
