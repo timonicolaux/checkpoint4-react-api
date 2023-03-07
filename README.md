@@ -1,7 +1,5 @@
 # Setup
 
-Create a mysql database "cuisine"
-
 Install dependencies :
 
 ```sh
