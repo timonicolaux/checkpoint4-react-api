@@ -119,6 +119,4 @@ app.post('/recettes', cors(), async (req, res) => {
   }
 });
 
-//
-
 module.exports.app = app;
